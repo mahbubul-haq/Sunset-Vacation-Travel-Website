@@ -1,6 +1,6 @@
 ## Sunset Vacation - Travel Website
-### CSE 326 - Information System Design Sessional Project
-### Django, Django Rest Framework, React, Bootstrap, CSS, Leaflet
+#### CSE 326 - Information System Design Sessional Project
+### Django, Django Rest Framework, React, Bootstrap, CSS, Leaflet, PostgreSQL
 #### Hotel/Resort Booking, Flight Booking, Car rental, Traveling Guideline
 #### Main Works
 * Project Idea - Scope Fixation
