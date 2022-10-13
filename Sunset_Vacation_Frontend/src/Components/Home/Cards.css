@@ -1,0 +1,145 @@
+.card_container{
+    width: 280px;
+    margin-left: 13px;
+    align-items: flex;
+    overflow: hidden;
+    box-shadow: 0 0 15px -5px;
+    padding: 20px;
+    border-radius: 20px;
+    
+   
+}
+.exp_container{
+    width: 600px;
+    margin-left: 30px;
+    margin-right: 10px;
+    align-items: flex;
+    overflow: hidden;
+    box-shadow: 0 0 15px -5px;
+    padding: 20px;
+    border-radius: 50px;
+   
+}
+.card_container:hover{
+    transform:  scale(1.1);
+    box-shadow: 0 0 15px -5px;
+}
+.image_container > img{
+       height: auto;
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 20px;
+}
+.cards{
+    width: 120%;;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
+    
+}  
+
+.features{
+    width: 100%;;
+    align-items: center;
+    margin-top: 20px;
+    
+    padding: 30px;
+    
+}  
+
+.cards >h1 {
+    font-size: 40px;
+    align-items: center;
+   
+    margin-left:50px ;
+    padding: 30px;
+} 
+
+.features >h1 {
+    font-size: 40px;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left:50px ;
+    padding: 30px;
+} 
+
+.cards_container{
+    justify-content: center;
+    align-items: center;
+    
+}
+ul {
+    display: inline-block;
+}
+.card_title >h1 {
+    font-size: 30px;
+}
+.e-container{   
+        background : url('./homePageImages/exp.jpg') center center/cover no-repeat;
+        width: 585px;
+        height: 100vh;
+    margin-left: 13px;
+    align-items: flex;
+    overflow: hidden;
+    box-shadow: 0 0 15px -5px;
+    padding: 20px;
+    border-radius: 20px;
+  
+    margin-right: 0px;
+    
+}
+.t-container{
+    background : url('./homePageImages/transport1.jpg') center center/cover no-repeat;
+    width: 585px;
+    height: 100vh;
+    margin-left: 0px;
+    align-items: flex;
+    overflow: hidden;
+    box-shadow: 0 0 15px -5px;
+    padding: 20px;
+    border-radius: 20px;
+   
+    
+}
+
+.h-btns{
+    margin-top: 6px;
+}
+.h-btns > .btns {
+    margin-top: 2px;
+    font-size: 20px;
+    
+    background: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.host-container{
+    background : url('./homePageImages/host.jpg') center center/cover no-repeat;
+    width: 1300px;
+    height: 80vh;
+    margin-left: 0px;
+    align-items: flex;
+    overflow: hidden;
+    box-shadow: 0 0 15px -5px;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    
+}
+.host-container >h1 {
+    color: white;
+    font-size: 70px;
+}
+.hbtns>{
+    margin-top: 6px;
+}
+.hbtns >.btns{
+    margin-top: 2px;
+    font-size: 20px;
+    border: 2px solid white;
+    color: cadetblue;
+    background: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-shadow: 0 0 10px -5px;
+}

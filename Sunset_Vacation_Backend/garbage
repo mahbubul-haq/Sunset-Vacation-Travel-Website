@@ -1,0 +1,126 @@
+from rest_framework import serializers
+
+from .models import  User
+
+# class UserSerializer(serializers.ModelSerializer):
+#
+#     class Meta:
+#         model = User
+#         fields = (
+#             'userId',
+#             'firstName',
+#             'lastName',
+#             'email',
+#             'phoneNo',
+#             'host',
+#             'password',
+#             'addressId'
+#         )
+
+    # path('', views.ProfileListView.as_view()),
+    # path('<int:id>/', views.ProfileListView.as_view()),
+    # path('', views.profile, name='profile'),
+    # path('password/', views_user.password, name='password'),
+    #path('', include(router.urls))
+
+
+    # CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:8080',
+#     'https://mt-oporajita.web.app'
+# ]
+# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_HEADERS = ["*"]
+
+
+class HostingSerializer(serializers.ModelSerializer):
+    title = serializers.CharField(max_length=100, required=True)
+    description = serializers.CharField(max_length=500, required=False, default="")
+    maxDaysRefund = serializers.IntegerField(required=False, default=None)
+    hostingStartDate = serializers.DateField(required=False, default=None)
+    published = serializers.BooleanField(required=False, default=False)
+    ownerId = serializers.IntegerField(required=True)
+
+    def create(self, validated_data):
+        # Once the request data has been validated, we can create a todo item instance in the database
+        return Hosting.objects.create(
+            title=validated_data.get('title'),
+            description=validated_data.get('description'),
+            maxDaysRefund=validated_data.get('maxDaysRefund'),
+            hostingStartDate=validated_data.get('hostingStartDate'),
+            published=validated_data.get('published'),
+            owner_id=validated_data.get('ownerId')
+        )
+
+    # def update(self, instance, validated_data):
+    #     # Once the request data has been validated, we can update the todo item instance in the database
+    #     print(instance.description)
+    #     instance.text = validated_data.get('text', instance.text)
+    #     print(instance.description)
+    #     instance.save()
+    #     return instance
+
+    class Meta:
+        model = Hosting
+        fields = (
+            'hostingId',
+            'title',
+            'description',
+            'maxDaysRefund',
+            'hostingStartDate',
+            'published',
+            'ownerId'
+        )
+
+
+class PropertySerializer(serializers.ModelSerializer):
+    hostingId = serializers.IntegerField(required=True)
+    perNightCost = serializers.IntegerField()
+    entirePrivateOrShared = serializers.CharField(max_length=20)
+    highestGuestNo = serializers.IntegerField()
+    beds = serializers.IntegerField()
+    bedrooms = serializers.IntegerField()
+    bathrooms = serializers.IntegerField()
+    privateBathroomAvailable = serializers.IntegerField()
+    needHostConfirmation = serializers.BooleanField()
+    partialPayAllowed = serializers.BooleanField()
+    categoryId = serializers.IntegerField()
+
+    def create(self, validated_data):
+        return Property.objects.create(
+            hostingId=validated_data.get('hostingId'),
+            perNightCost=validated_data.get('perNightCost'),
+            entirePrivateOrShared=validated_data.get('entirePrivateOrShared'),
+            highestGuestNo=validated_data.get('highestGuestNo'),
+            beds=validated_data.get('beds'),
+            bedrooms=validated_data.get('bedrooms'),
+            bathrooms=validated_data.get('bathrooms'),
+            privateBathroomAvailable=validated_data.get('privateBathroomAvailable'),
+            needHostConfirmation=validated_data.get('needHostConfirmation'),
+            partialPayAllowed=validated_data.get('partialPayAllowed'),
+            categoryId=validated_data.get('categoryId'),
+        )
+
+    # def update(self, instance, validated_data):
+    #     # Once the request data has been validated, we can update the todo item instance in the database
+    #     print(instance.description)
+    #     instance.text = validated_data.get('text', instance.text)
+    #     print(instance.description)
+    #     instance.save()
+    #     return instance
+
+    class Meta:
+        model = Property
+        fields = (
+            'hosting',
+            'perNightCost',
+            'EntirePrivateOrShared',
+            'highestGuestNo',
+            'beds',
+            'bedrooms',
+            'bathrooms',
+            'privateBathroomAvailable',
+            'needHostConfirmation',
+            'partialPayAllowed',
+            'category'
+        )
